@@ -14,6 +14,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome! ");
+});
+
 app.use("/api", transactionRoute);
 app.use((req, res, next) => {
   const error = new HttpError("Could not find this route.", 404);
